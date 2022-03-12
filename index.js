@@ -1,8 +1,15 @@
 const express = require('express');
+const cors = require('cors');
+
 const mongoose = require('mongoose');
 
 const app = express();
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({limit: '5000mb', extended: true, parameterLimit: 100000000000}));
 
+app.use(cors({
+    origin: '*'
+}));
 app.use(express.json());
 
 const routes = require('./routes/routes');

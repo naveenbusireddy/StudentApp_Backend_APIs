@@ -7,7 +7,7 @@ const Student = require('../model/model');
 //Post Method
 router.post('/saveStudent', async (req, res) => {
     // res.send('Post API')
-    // console.log(req.body);
+     console.log(req.body);
     const data = new Student({
         name: req.body.name,
         e_mail: req.body.e_mail,
